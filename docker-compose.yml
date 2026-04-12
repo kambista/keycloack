@@ -5,6 +5,11 @@ services:
     restart: always
     env_file:
       - .env
+    environment:
+      - KC_HOSTNAME=mercury-xqa.kambista.com
+      - KC_HOSTNAME_STRICT=false
+      - KC_HTTP_ENABLED=true
+      - KC_PROXY_HEADERS=xforwarded    
     command: start
     expose:
       - "8080"
